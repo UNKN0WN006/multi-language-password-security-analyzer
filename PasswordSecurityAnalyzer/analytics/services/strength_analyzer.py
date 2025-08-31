@@ -1,4 +1,4 @@
-def analyze_password_strength(password):
+def analyze_strength(password):
     """
     Analyzes the strength of a given password and returns a score and feedback.
 

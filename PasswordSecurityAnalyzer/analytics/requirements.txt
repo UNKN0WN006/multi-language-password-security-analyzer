@@ -1,5 +1,6 @@
 Flask==2.2.2
 requests==2.28.1
-hashlib==20081119
-zxcvbn==4.4.0
+ # hashlib is part of the Python standard library, removing the version constraint
+zxcvbn==4.5.0
 python-dotenv==0.20.0
+Werkzeug==2.2.2
