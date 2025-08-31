@@ -1,0 +1,27 @@
+<Window x:Class="PasswordAnalyzer.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:PasswordAnalyzer"
+        Title="Password Security Analyzer" Height="450" Width="800"
+        Background="{DynamicResource DarkBackground}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal" Margin="10">
+            <TextBlock Text="Password:" VerticalAlignment="Center" Margin="0,0,10,0"/>
+            <PasswordBox x:Name="PasswordBox" Width="300" PasswordChanged="OnPasswordChanged"/>
+            <Button Content="Check Breach" Margin="10,0,0,0" Click="CheckBreach_Click"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="10">
+            <TextBlock Text="Strength:" FontWeight="Bold"/>
+            <ProgressBar x:Name="StrengthMeter" Height="20" Maximum="10" Foreground="Green"/>
+            <TextBlock x:Name="BreachStatus" FontWeight="Bold" Foreground="Red"/>
+            <ItemsControl x:Name="RecommendationsList"/>
+            <ItemsControl x:Name="HashComparisonTable"/>
+        </StackPanel>
+    </Grid>
+</Window>
